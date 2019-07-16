@@ -38,7 +38,7 @@ def fir(request):
     premium=[]
     product = []
     tenure = []
-    for i in range(0,len(number)):
+    for i in range(1,len(number)):
       premi = db.child("PrimiumTable").child(i).child('ppremium').get().val()
       prod = db.child('PrimiumTable').child(i).child('ptitle').get().val()
       ten = db.child('PrimiumTable').child(i).child('ptenure').get().val()
