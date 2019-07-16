@@ -32,21 +32,21 @@ def fir(request):
     number = db.child('PrimiumTable').get().val()
     number = list(number)
     counter = []
-    for i in range(0,len(number)):
+    for i in range(1,len(number)):
       counter.append(i)
     print(number)
     premium=[]
     product = []
     tenure = []
     for i in range(0,len(number)):
-      premi = db.child("Primium Table").child(i).child('ppremium').get().val()
-      prod = db.child('Primium Table').child(i).child('ptittle').get().val()
-      ten = db.child('Primium Table').child(i).child('ptenure').get().val()
+      premi = db.child("PrimiumTable").child(i).child('ppremium').get().val()
+      prod = db.child('PrimiumTable').child(i).child('ptitle').get().val()
+      ten = db.child('PrimiumTable').child(i).child('ptenure').get().val()
       tenure.append(ten)
       premium.append(premi)
       product.append(prod)
      
-    paginator = pg(premium,5)
+    paginator = pg(premium,3)
     page = request.GET.get('page')
     num = paginator.get_page(page)  
     final = zip(premium,product,tenure,counter)
