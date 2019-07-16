@@ -34,6 +34,9 @@ def fir(request):
     premium=[]
     product = []
     tenure = []
+    counter = []
+    for i in range(0,len(number)):
+      counter.append(i)
     for i in range(1,len(number)):
       premi = db.child("PrimiumTable").child(i).child('ppremium').get().val()
       prod = db.child('PrimiumTable').child(i).child('ptitle').get().val()
@@ -43,7 +46,7 @@ def fir(request):
       product.append(prod)
      
  
-    final = zip(premium,product,tenure)
+    final = zip(premium,product,tenure,counter)
     
     # return render(request,"temp/Premium Table.html",{'premium':premium,'product':product})
     return render(request,"temp/policy.html",{'final':final})
