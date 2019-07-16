@@ -92,22 +92,7 @@
 				{% endfor %}
 				
 			   </table><br>
-			   {% if premium.has_previous %}
-				<!-- <a href="?page=1"><<</a> -->
-				<a href="?page={{premmium.previous_page_number}}"><<</a>
-				{% endif %}
-				
-					{% for num in premium.paginator.page_range %}
-					{% if final.number %}
-					<a><font color="blue"> {{ num }} </font></a>
-					{% else %}
-					<a><b>{{num}}</b></a>
-					{% endif %}
-				
-					{% endfor %}
-					{% if i.has_next %}
-					<a href="?page={{premium.next_page_number}}">>></a>
-					{% endif %}
+			   
 		</div>
 	</div>
 	<!-- /view -->
