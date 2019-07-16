@@ -31,10 +31,6 @@ db = firebase.database()
 def fir(request):
     number = db.child('PrimiumTable').get().val()
     number = list(number)
-    counter = []
-    for i in range(1,len(number)):
-      counter.append(i)
-    print(number)
     premium=[]
     product = []
     tenure = []
@@ -46,13 +42,11 @@ def fir(request):
       premium.append(premi)
       product.append(prod)
      
-    paginator = pg(premium,3)
-    page = request.GET.get('page')
-    num = paginator.get_page(page)  
-    final = zip(premium,product,tenure,counter)
+ 
+    final = zip(premium,product,tenure)
     
     # return render(request,"temp/Premium Table.html",{'premium':premium,'product':product})
-    return render(request,"temp/policy.html",{'final':final,'premium':num})
+    return render(request,"temp/policy.html",{'final':final})
 
 def view(request,id):
     # doc = file.objects.all()
