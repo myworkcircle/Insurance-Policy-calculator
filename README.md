@@ -1,4 +1,4 @@
-# insure
+# Insurancebangla
 
 A one stop portal for all kinds of insurance policies. All policies of different comapnies can be compared here.
 All insurance policies with the best interest rate are available to you.
